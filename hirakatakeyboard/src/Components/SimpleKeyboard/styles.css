@@ -10,8 +10,3 @@ input {
   .simple-keyboard {
     max-width: 850px;
   }
-  
-.ex1 .parent {
-    display: grid;
-    place-items: center;
-}

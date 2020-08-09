@@ -1,15 +1,25 @@
 import React, { useRef, useState } from "react";
-import ReactDOM from "react-dom";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 
-import "./style.css";
+/**
+ * Available layouts
+ * https://github.com/hodgef/simple-keyboard-layouts/tree/master/src/lib/layouts
+ */
+import japaneseLayout from "simple-keyboard-layouts/build/layouts/japanese";
 
-function App() {
+
+// let keyboard = new Keyboard({
+//   onChange: input => onChange(input),
+//   onKeyPress: button => onKeyPress(button),
+//   layout: layout
+// });
+
+const App = () => {
   const [input, setInput] = useState("");
-  const [layout, setLayout] = useState("default");
+  const [layout, setLayout] = useState(japaneseLayout);
   const keyboard = useRef();
-
+  
   const onChange = input => {
     setInput(input);
     console.log("Input changed", input);
@@ -20,6 +30,9 @@ function App() {
     setLayout(newLayoutName);
   };
 
+  const handleJapanese = () => {
+      const newLayoutName = layout === 'default' ? 'japanese' : 'default';
+  }
   const onKeyPress = button => {
     console.log("Button pressed", button);
 
@@ -47,10 +60,10 @@ function App() {
         layoutName={layout}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        physicalKeyboardHighlight={true}
       />
     </div>
   );
 }
 
-
-export default App;
+export default App

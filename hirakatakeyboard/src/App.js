@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import SimpleKeyboard from './Components/SimpleKeyboard/SimpleKeyboard';
-
+import SimpleKeyboard from './Components/SimpleKeyboard/App';
 function App() {
   return (
-    <SimpleKeyboard />
-  );
+    <SimpleKeyboard />  );
 }
 
 export default App;
